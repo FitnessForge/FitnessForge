@@ -8,8 +8,7 @@
     "dev:back": "nx run back:serve",
     "dev": "nx run-many --target=serve --all",
     "start:db": "docker-compose up -d",
-    "stop:db": "docker-compose down",
-    "open:db": "open http://localhost:8081"
+    "stop:db": "docker-compose down"
   },
   "private": true,
   "dependencies": {
@@ -64,7 +63,6 @@
     "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",
     "nx": "18.0.2",
-    "open": "^10.0.3",
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",

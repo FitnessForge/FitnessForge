@@ -28,6 +28,13 @@ services:
       - ${DB_VIEWER_PORT}:${DB_VIEWER_PORT}
     depends_on:
       - mongodb
+  mailcatcher:
+    image: schickling/mailcatcher
+    container_name: mailcatcher_container
+    restart: always
+    ports:
+      - "${MAILCATCHER_VIEWER_PORT}:${MAILCATCHER_VIEWER_PORT}" 
+      - "${MAILCATCHER_PORT}:${MAILCATCHER_PORT}" 
 
 volumes:
   mongodb_data:

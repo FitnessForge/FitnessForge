@@ -11,7 +11,8 @@
     "stop:db": "docker-compose down",
     "test:front": "nx run front:test",
     "test:back": "nx run back:test",
-    "test": "nx run-many --target=test -p back front"
+    "test": "nx run-many --target=test -p back front",
+    "lint": "nx run-many --target=lint --all"
   },
   "private": true,
   "dependencies": {

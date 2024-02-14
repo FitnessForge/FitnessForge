@@ -11,22 +11,25 @@ jobs:
     name: run Tests
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Cache Dependencies
         id: cache
         uses: actions/cache@v3
+        env:
+          cache-name: cache-yarn
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Node
         uses: actions/setup-node@v4
 
-      - name: Install Dependencies
-        run: npm install
-        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+      - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+        name: Install Dependencies
+        run: yarn install
 
       - name: Run Tests
-        run: npm run test
+        run: yarn test

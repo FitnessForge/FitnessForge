@@ -31,5 +31,16 @@ jobs:
         name: Install Dependencies
         run: yarn install
 
+      - name: Cache Nx artifacts 
+        id: cache-nx
+        uses: actions/cache@v3
+        with:
+          path: ~/.nx/cache
+          key: ${{ runner.os }}-nx-${{ hashFiles('**/Nx.json') }}
+
+      - if: ${{ steps.cache-nx.outputs.cache-hit != 'true' }}
+        name: Install Nx globally
+        run: npx @nrwl/cli install
+
       - name: Run Tests
         run: yarn test

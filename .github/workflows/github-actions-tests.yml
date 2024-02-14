@@ -39,7 +39,7 @@ jobs:
           key: ${{ runner.os }}-nx-${{ hashFiles('**/nx.json') }}
 
       - if: ${{ steps.cache-nx.outputs.cache-hit != 'true' }}
-        name: Install Nx globally
+        name: Install Nx
         run: yarn add -D @nrwl/cli
 
       - name: Run Tests

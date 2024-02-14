@@ -40,7 +40,7 @@ jobs:
 
       - if: ${{ steps.cache-nx.outputs.cache-hit != 'true' }}
         name: Install Nx globally
-        run: npx @nrwl/cli install
+        run: yarn global add @nrwl/cli
 
       - name: Run Tests
         run: yarn test

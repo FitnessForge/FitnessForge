@@ -1,4 +1,6 @@
-import './global.css';
+import { ThemeProvider } from '@mui/material';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import theme from '../theme';
 
 export const metadata = {
   title: 'Welcome to apps/front',
@@ -12,7 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AppRouterCacheProvider options={{ key: 'css' }}>
+          <ThemeProvider theme={theme}>
+            {children}
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }

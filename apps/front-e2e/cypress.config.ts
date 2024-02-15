@@ -6,7 +6,7 @@ export default defineConfig({
   e2e: {
     ...nxE2EPreset(__filename, {
       cypressDir: 'src',
-      webServerCommands: { default: 'nx run front:start' },
+      webServerCommands: { default: 'nx run front:serve' },
     }),
     baseUrl: 'http://localhost:3000',
   },

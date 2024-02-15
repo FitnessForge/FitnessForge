@@ -6,5 +6,10 @@ export default async function Index() {
    *
    * Note: The corresponding styles are in the ./index.none file.
    */
-  return <Counter />;
+  return (
+    <div>
+      <h1>Welcome to front!</h1>
+      <Counter />
+    </div>
+  );
 }

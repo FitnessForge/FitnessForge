@@ -3,19 +3,19 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "nx run-many --target=build --all",
+    "build": "nx run-many --target=build",
     "dev:front": "nx run front:serve",
     "dev:back": "nx run back:serve",
-    "dev": "nx run-many --target=serve --all",
-    "start:db": "docker-compose up -d",
-    "stop:db": "docker-compose down",
+    "dev": "nx run-many --target=serve",
+    "start:docker": "docker-compose up -d",
+    "stop:docker": "docker-compose down",
     "test:front": "nx run front:test",
     "test:back": "nx run back:test",
     "test": "nx run-many --target=test -p back front",
     "e2e:front": "nx run front-e2e:e2e",
     "e2e:back": "nx run back-e2e:e2e",
     "e2e": "nx run-many --target=e2e",
-    "lint": "nx run-many --target=lint --all"
+    "lint": "nx run-many --target=lint"
   },
   "private": true,
   "dependencies": {

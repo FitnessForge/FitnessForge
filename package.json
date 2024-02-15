@@ -12,6 +12,9 @@
     "test:front": "nx run front:test",
     "test:back": "nx run back:test",
     "test": "nx run-many --target=test -p back front",
+    "e2e:front": "nx run front-e2e:e2e",
+    "e2e:back": "nx run back-e2e:e2e",
+    "e2e": "nx run-many --target=e2e",
     "lint": "nx run-many --target=lint --all"
   },
   "private": true,

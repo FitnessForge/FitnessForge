@@ -1,4 +1,5 @@
 import { Stack, Typography } from "@mui/material";
+import { Counter } from './components/Counter/Counter';
 
 export default async function Index() {
   return (
@@ -6,6 +7,7 @@ export default async function Index() {
       <Typography variant="h1" align="center">
         Fitness Fusion
       </Typography>
+      <Counter />
     </Stack>
   );
 }

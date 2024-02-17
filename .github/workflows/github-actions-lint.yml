@@ -17,8 +17,12 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
 
-      - name: Run Tests
-        run: npm run lint
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test

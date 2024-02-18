@@ -11,10 +11,19 @@
           {
             "enforceBuildableLibDependency": true,
             "allow": [],
+            "allowCircularSelfDependency": true,
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:back",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:back"]
+              },
+              {
+                "sourceTag": "scope:front",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:front"]
               }
             ]
           }

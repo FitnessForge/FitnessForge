@@ -3,10 +3,6 @@
   "compilerOptions": {
     "jsx": "preserve",
     "allowJs": true,
-    "baseUrl": ".",
-    "paths": {
-      "@*": ["src/*"]
-    },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,

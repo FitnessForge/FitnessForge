@@ -9,9 +9,10 @@ module.exports = async function () {
   console.log('Starting services...');
 
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix('api');
+  const globalPrefix = process.env.BACK_GLOBAL_PREFIX || 'api';
+  app.setGlobalPrefix(globalPrefix);
   await app.listen(8000);
-  Logger.log(`🚀 Application is running on: http://localhost:8000/api`);
+  Logger.log(`🚀 Application is running on: http://localhost:8000/${globalPrefix}`);
 
   // Hint: Use `globalThis` to pass variables to global teardown.
   globalThis.__TEARDOWN_MESSAGE__ = '\nTearing down...\n';

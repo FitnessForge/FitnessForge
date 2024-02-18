@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography } from '@mui/material';
 import { Counter } from './components/Counter/Counter';
 
 export default async function Index() {

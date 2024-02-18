@@ -2,7 +2,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import theme from '../theme';
 import { CssBaseline } from '@mui/material';
-import { Providers } from '@lib/providers';
+import { Providers } from '@fitness-forge/front/lib/providers';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

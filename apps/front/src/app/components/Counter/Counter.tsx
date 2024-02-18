@@ -11,7 +11,7 @@ import {
   selectCount,
   incrementAsync,
   incrementIfOddAsync,
-} from '@lib/redux';
+} from '@fitness-forge/front/lib/redux';
 import styles from './counter.module.css';
 
 export const Counter = () => {

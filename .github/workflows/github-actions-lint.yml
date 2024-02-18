@@ -20,8 +20,8 @@ jobs:
         env:
           cache-name: cache-yarn
         with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Node
         uses: actions/setup-node@v4
@@ -29,17 +29,6 @@ jobs:
       - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
         name: Install Dependencies
         run: yarn install
-
-      - name: Cache Nx artifacts 
-        id: cache-nx
-        uses: actions/cache@v3
-        with:
-          path: ~/.nx/cache
-          key: ${{ runner.os }}-nx-${{ hashFiles('**/nx.json') }}
-
-      - if: ${{ steps.cache-nx.outputs.cache-hit != 'true' }}
-        name: Install Nx
-        run: yarn add -D @nrwl/cli
 
       - name: Run Lint
         run: npm run lint

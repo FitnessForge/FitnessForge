@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fitness-forge/interfaces": ["shared/interfaces/src/index.ts"],
-      "@fitness-forge/front/*": ["apps/front/src/*"],
-      "@fitness-forge/back/*": ["apps/back/src/*"]
+      "@fitness-forge/interfaces": ["shared/interfaces/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

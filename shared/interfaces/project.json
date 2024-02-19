@@ -5,7 +5,7 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/vite:build",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/shared/interfaces",
@@ -15,5 +15,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["scope:shared"]
 }

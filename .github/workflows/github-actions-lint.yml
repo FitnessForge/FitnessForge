@@ -7,12 +7,21 @@ on:
       - master
 
 jobs:
-  frontend-tests:
-    name: Tests
+  eslint:
+    name: run Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Cache Dependencies
+        id: cache
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-yarn
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Node
         uses: actions/setup-node@v4

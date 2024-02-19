@@ -5,7 +5,7 @@ export default async function Index() {
   return (
     <Stack sx={{ minHeight: '100vh' }} justifyContent={'center'} alignItems={'center'}>
       <Typography variant="h1" align="center">
-        Fitness Fusion
+        Welcome Fitness Forge
       </Typography>
       <Counter />
     </Stack>

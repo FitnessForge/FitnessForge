@@ -1,9 +1,9 @@
 /* Instruments */
-import { createAppAsyncThunk } from '@fitness-forge/front/lib/redux/createAppAsyncThunk';
+import { createAppAsyncThunk } from '../../createAppAsyncThunk';
 import { fetchIdentityCount } from './fetchIdentityCount';
 import { selectCount } from './selectors';
 import { counterSlice } from './counterSlice';
-import type { ReduxThunkAction } from '@fitness-forge/front/lib/redux';
+import type { ReduxThunkAction } from '../../../redux';
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
